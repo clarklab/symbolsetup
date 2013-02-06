@@ -18,7 +18,9 @@ wp_register_style( 'ss-standard', plugins_url( 'webfonts/ss-standard.css' , __FI
 if (file_exists($ss_social)) {
 wp_register_style( 'ss-social', plugins_url( 'webfonts/ss-social.css' , __FILE__ ) );
 }
-wp_register_style( 'ss-admin-styles', plugins_url( 'style.css' , __FILE__ ) );
+if (is_admin) {
+wp_register_style( 'ss-admin-styles', plugins_url( 'inc/style.css' , __FILE__ ) );
+}
 
 function ss_styles()  
 { 
